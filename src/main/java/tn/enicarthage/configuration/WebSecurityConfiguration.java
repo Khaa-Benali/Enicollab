@@ -11,24 +11,37 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import tn.enicarthage.filters.JwtRequestFilter;
 
 @Configuration
 @EnableMethodSecurity
 @EnableWebSecurity
 public class WebSecurityConfiguration {
+	private final JwtRequestFilter jwtRequestFilter;
 	
 
-	@SuppressWarnings({ "removal", "deprecation" })
+	public WebSecurityConfiguration(JwtRequestFilter jwtRequestFilter) {
+		this.jwtRequestFilter = jwtRequestFilter;
+	}
+
+	@SuppressWarnings({"deprecation" })
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 		return httpSecurity.csrf().disable()
 				.authorizeRequests()
-                .requestMatchers("/authenticate").permitAll() // Autoriser l'accès à /authenticate sans authentification
-                .anyRequest().permitAll()
+                .requestMatchers("/authenticate").permitAll()
+				.and()
+				.authorizeRequests().requestMatchers("/api/**")
+				.authenticated().and()
+				.httpBasic()
 				.and()
 				.sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-				.and().build();
+				.and()
+				.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)
+				.build();
 				
 	}
 

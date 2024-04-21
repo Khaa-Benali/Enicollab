@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import tn.enicarthage.dto.StudentDto;
 import tn.enicarthage.enums.UserRole;
 
 @Entity
@@ -20,8 +21,17 @@ public class User {
    private String name;
    private String email;
    private String password;
+   private String studentClass;
    
-   @Enumerated(EnumType.STRING)
+   public String getStudentClass() {
+	return studentClass;
+}
+
+public void setStudentClass(String studentClass) {
+	this.studentClass = studentClass;
+}
+
+@Enumerated(EnumType.STRING)
    private UserRole role;
 
 public Long getId() {
@@ -64,5 +74,14 @@ public void setRole(UserRole role) {
 	this.role = role;
 }
    
+public StudentDto getStudentDto() {
+	StudentDto studentDto = new StudentDto();
+	studentDto.setId(id);
+	studentDto.setEmail(email);
+	studentDto.setStudentClass(studentClass);
+	studentDto.setName(name);
+	return studentDto;
+	
+}
     
 }

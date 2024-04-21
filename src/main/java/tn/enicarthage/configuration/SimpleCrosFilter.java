@@ -1,8 +1,6 @@
 package tn.enicarthage.configuration;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
@@ -25,8 +23,6 @@ public class SimpleCrosFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletResponse response = (HttpServletResponse) res;
 	    HttpServletRequest request = (HttpServletRequest) req;
-
-	    Map<String ,String> map = new HashMap<>();
 	    
 	    String originHeader = request.getHeader("origin");
 	    response.setHeader("Access-Control-Allow-Origin", originHeader);
@@ -37,7 +33,6 @@ public class SimpleCrosFilter implements Filter {
         }else {
 	
 	        chain.doFilter(req, res);}
-		
 		
 	}
 	@Override

@@ -41,7 +41,7 @@ public class AuthenticationController {
 			return null;
 		}
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getEmail());
-	    final String jwt = jwtUtil.GenerateToken(userDetails.getUsername());
+	    final String jwt = jwtUtil.generateToken(userDetails.getUsername());
 	    
 	    return new AuthenticationResponse(jwt) ;
 	}
