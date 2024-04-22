@@ -6,9 +6,11 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import tn.enicarthage.dto.StudentDto;
+import tn.enicarthage.enums.Group;
 import tn.enicarthage.enums.UserRole;
 
 @Entity
@@ -21,13 +23,24 @@ public class User {
    private String name;
    private String email;
    private String password;
-   private String studentClass;
+   private Group studentClass;
+   @ManyToOne
+   private Niveau niveau;
    
-   public String getStudentClass() {
+   
+   public Niveau getNiveau() {
+	return niveau;
+}
+
+public void setNiveau(Niveau niveau) {
+	this.niveau = niveau;
+}
+
+public Group getStudentClass() {
 	return studentClass;
 }
 
-public void setStudentClass(String studentClass) {
+public void setStudentClass(Group studentClass) {
 	this.studentClass = studentClass;
 }
 
@@ -80,6 +93,7 @@ public StudentDto getStudentDto() {
 	studentDto.setEmail(email);
 	studentDto.setStudentClass(studentClass);
 	studentDto.setName(name);
+	studentDto.setNiveau(niveau);
 	return studentDto;
 	
 }
