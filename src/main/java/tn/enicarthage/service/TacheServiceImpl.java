@@ -7,8 +7,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import tn.enicarthage.entities.Projet;
 import tn.enicarthage.entities.Tache;
 import tn.enicarthage.entities.User;
+import tn.enicarthage.repository.ProjetRepository;
 import tn.enicarthage.repository.TacheRepository;
 import tn.enicarthage.repository.UserRepository;
 
@@ -20,6 +22,8 @@ public class TacheServiceImpl implements TacheService {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private ProjetRepository projetRepository;
 
     @Override
     public Tache assignerTache(Long tacheId, Long userId) {
@@ -98,4 +102,17 @@ public class TacheServiceImpl implements TacheService {
         }
         return false;
     }
+    @Override
+    public Tache addTacheToProjet(Long projetId, Tache tache) {
+        Optional<Projet> optionalProjet = projetRepository.findById(projetId);
+        if (optionalProjet.isPresent()) {
+            Projet projet = optionalProjet.get();
+            tache.setProjet(projet); // Assigne le projet à la tâche
+            // Définir d'autres propriétés de la tâche si nécessaire
+            return tacheRepository.save(tache); // Enregistre la tâche
+        } else {
+            throw new RuntimeException("Projet not found with id: " + projetId);
+        }
+    }
+
 }

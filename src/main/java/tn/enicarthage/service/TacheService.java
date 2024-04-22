@@ -30,4 +30,6 @@ public interface TacheService {
     
     // Vérifier si une tâche est en retard par rapport à sa date d'échéance
     boolean isTacheEnRetard(Long tacheId);
+    Tache addTacheToProjet(Long projetId, Tache tache);
+
 }
