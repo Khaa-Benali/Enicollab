@@ -9,12 +9,10 @@ import tn.enicarthage.entities.Projet;
 import tn.enicarthage.services.projets.ProjetService;
 
 import java.util.List;
-
 @RestController
-@RequestMapping("projets")
+@RequestMapping("/projets")
 public class ProjetController {
-
-    @Autowired
+	@Autowired
     private ProjetService projetService;
 
     @GetMapping("/")
@@ -59,4 +57,5 @@ public class ProjetController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
 }

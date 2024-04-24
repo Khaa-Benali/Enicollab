@@ -1,7 +1,5 @@
 package tn.enicarthage.dto;
-
 import tn.enicarthage.entities.Niveau;
-import tn.enicarthage.enums.Group;
 
 public class StudentDto {
 	   private Long id;
@@ -14,7 +12,7 @@ public class StudentDto {
 	private String name;
 	   private String email;
 	   private String password;
-	   private Group studentClass;
+	   private String studentClass;
 	   private Niveau niveau;
 	   
 	   
@@ -42,10 +40,10 @@ public class StudentDto {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Group getStudentClass() {
+	public String getStudentClass() {
 		return studentClass;
 	}
-	public void setStudentClass(Group studentClass) {
+	public void setStudentClass(String studentClass) {
 		this.studentClass = studentClass;
 	}
 	   

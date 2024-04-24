@@ -5,7 +5,6 @@ import java.util.List;
 import tn.enicarthage.entities.Projet;
 
 public interface ProjetService {
-	 List<Projet> getAllProjets();
 
 	 Projet getProjetById(Long id);
 
@@ -16,5 +15,7 @@ public interface ProjetService {
 	double CalculNoteFinal(Long id);
 
 	void assignerTeamAProjet(Long id, List<String> emails);
+
+	List<Projet> getAllProjets();
 
 }

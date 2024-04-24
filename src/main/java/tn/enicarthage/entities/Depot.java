@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
+import tn.enicarthage.dto.DepotDto;
 @Data
 @Entity
 public class Depot {
@@ -46,5 +47,21 @@ public class Depot {
 	public void setDateSoumission(Date dateSoumission) {
 		this.dateSoumission = dateSoumission;
 	}
-    
+
+	public Tache getTache() {
+		return tache;
+	}
+
+	public void setTache(Tache tache) {
+		this.tache = tache;
+	}
+
+
+    public DepotDto getDepotDto() {
+    	DepotDto depotDto = new DepotDto();
+    	depotDto.setId(id);
+    	depotDto.setContenu(contenu);
+    	depotDto.setDateSoumission(null);
+    	return depotDto;
+    }
 }

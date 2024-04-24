@@ -10,7 +10,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import tn.enicarthage.dto.StudentDto;
-import tn.enicarthage.enums.Group;
 import tn.enicarthage.enums.UserRole;
 
 @Entity
@@ -23,7 +22,7 @@ public class User {
    private String name;
    private String email;
    private String password;
-   private Group studentClass;
+   private String studentClass;
    @ManyToOne
    private Niveau niveau;
    
@@ -36,11 +35,11 @@ public void setNiveau(Niveau niveau) {
 	this.niveau = niveau;
 }
 
-public Group getStudentClass() {
+public String getStudentClass() {
 	return studentClass;
 }
 
-public void setStudentClass(Group studentClass) {
+public void setStudentClass(String studentClass) {
 	this.studentClass = studentClass;
 }
 

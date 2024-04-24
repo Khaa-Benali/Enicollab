@@ -11,6 +11,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
+import tn.enicarthage.dto.MatiereDto;
 
 @Entity
 @Data
@@ -70,5 +71,12 @@ public class Matiere {
 	    
 	    @ManyToOne()
 	    private Niveau niveau;
+	    public MatiereDto getMatiereDto() {
+	        MatiereDto matiereDto = new MatiereDto();
+	        matiereDto.setId(this.getId());
+	        matiereDto.setNom(this.getNom());
+
+	        return matiereDto;
+	    }
 
 }

@@ -21,10 +21,6 @@ public class ProjetServiceImpl implements ProjetService {
 	@Autowired
 	 private ProjetRepository projetRepository;
 
-	 @Override
-	 public List<Projet> getAllProjets() {
-	     return projetRepository.findAll();
-	 }
 	 
 	 @Override
 	 public Projet saveProjet(Projet projet) {
@@ -78,5 +74,9 @@ public class ProjetServiceImpl implements ProjetService {
 	     // Définir l'équipe du projet
 	     projet.setTeam(list);
 	 }
+	@Override
+	public List<Projet> getAllProjets() {
+		return projetRepository.findAll();
+	}
 
 }

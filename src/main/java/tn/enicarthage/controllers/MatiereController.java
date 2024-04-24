@@ -19,7 +19,7 @@ public class MatiereController {
     @Autowired
     private MatiereService matiereService;
 
-    @GetMapping
+    @GetMapping("/")
     public ResponseEntity<List<Matiere>> getAllMatieres() {
         List<Matiere> matieres = matiereService.getAllMatieres();
         return ResponseEntity.ok(matieres);

@@ -94,5 +94,4 @@ public class AdminServiceImpl implements AdminService {
 		teacherRepository.deleteById(teacherId);
 		
 	}
-
 }

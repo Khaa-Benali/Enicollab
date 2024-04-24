@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import tn.enicarthage.dto.NiveauDto;
 
 @Entity
 @Data
@@ -32,6 +33,14 @@ public class Niveau {
 
 		public void setNom(String nom) {
 			this.nom = nom;
+		}
+		
+		public NiveauDto getNiveauDto() {
+			NiveauDto niveauDto = new NiveauDto();
+			niveauDto.setId(id);
+			niveauDto.setNom(nom);
+			return niveauDto;
+			
 		}
 
 }

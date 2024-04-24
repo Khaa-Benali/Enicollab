@@ -11,6 +11,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+import tn.enicarthage.dto.TacheDto;
 @Entity
 @Data
 @Table(name = "taches")
@@ -86,5 +87,12 @@ public class Tache {
 	public void setDepot(Depot depot) {
 		this.depot = depot;
 	}
-
+	
+ public TacheDto tacheDto() {
+	 TacheDto tacheDto = new TacheDto();
+	 tacheDto.setCoefficient(coefficient);
+	 tacheDto.setId(id);
+	 tacheDto.setDescription(description);
+	 return tacheDto;
+ }
 }

@@ -1,7 +1,7 @@
 package tn.enicarthage.entities;
-
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -16,6 +16,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
+import tn.enicarthage.dto.ProjetDto;
+import tn.enicarthage.dto.StudentDto;
+import tn.enicarthage.dto.TacheDto;
 import tn.enicarthage.enums.EtatProjet;
 
 @Entity
@@ -128,6 +131,35 @@ public class Projet {
 		public void setTeam(List<User> team) {
 			this.team = team;
 		}
-	    
+		 public ProjetDto getProjetDto() {
+		        ProjetDto projetDto = new ProjetDto();
+		        projetDto.setId(this.getId());
+		        projetDto.setNom(this.getNom());
+		        projetDto.setDescription(this.getDescription());
+		        projetDto.setDateD(this.getDateD());
+		        projetDto.setDateF(this.getDateF());
+		        projetDto.setNote(this.getNote());
+		        projetDto.setEtatProjet(this.getEtatProjet());
+		        if (this.getMatiere() != null) {
+		            projetDto.setMatiereId(this.getMatiere().getId());
+		        }
+
+		        if (this.getTaches() != null) {
+		            List<TacheDto> tacheDtos = this.getTaches().stream()
+		                    .map(Tache::tacheDto)
+		                    .collect(Collectors.toList());
+		            projetDto.setTaches(tacheDtos);
+		        }
+
+		        // Convertissez la liste des membres de l'équipe en liste de DTOs
+		        if (this.getTeam() != null) {
+		            List<StudentDto> studentDtos = this.getTeam().stream()
+		                    .map(User::getStudentDto)
+		                    .collect(Collectors.toList());
+		            projetDto.setTeam(studentDtos);
+		        }
+
+		        return projetDto;
+		    }
 
 }
