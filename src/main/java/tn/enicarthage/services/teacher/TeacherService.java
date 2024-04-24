@@ -3,6 +3,7 @@ package tn.enicarthage.services.teacher;
 import java.util.List;
 import java.util.Optional;
 
+import tn.enicarthage.dto.MatiereDto;
 import tn.enicarthage.dto.ProjetDto;
 import tn.enicarthage.entities.Depot;
 import tn.enicarthage.entities.Matiere;
@@ -29,6 +30,8 @@ public interface TeacherService {
 	List<Projet> getAllProjets();
 
 	List<ProjetDto> getAllProjects();
+
+	List<MatiereDto> getAllMatieres();
 
 
 

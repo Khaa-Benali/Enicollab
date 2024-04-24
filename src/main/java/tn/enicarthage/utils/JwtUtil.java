@@ -64,5 +64,17 @@ public class JwtUtil {
 	                .signWith(secretKey)
 	                .compact();
 	    }
+
+	    public String extractEmail(String token) {
+	        // Extraire les claims (informations) du token JWT
+	        Claims claims = Jwts.parserBuilder()
+	                        .setSigningKey(secretKey)
+	                        .build()
+	                        .parseClaimsJws(token)
+	                        .getBody();
+
+	        // Extraire l'e-mail des claims
+	        return claims.getSubject();
+	    }
 }
 

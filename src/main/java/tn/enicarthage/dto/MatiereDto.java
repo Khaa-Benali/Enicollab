@@ -3,9 +3,6 @@ package tn.enicarthage.dto;
 public class MatiereDto {
 	 private Long id;
 	    private String nom;
-	    // Ajoutez d'autres champs si nécessaire
-
-	    // Getters et setters
 	    public Long getId() {
 	        return id;
 	    }

@@ -95,6 +95,5 @@ public StudentDto getStudentDto() {
 	studentDto.setNiveau(niveau);
 	return studentDto;
 	
-}
-    
+}  
 }

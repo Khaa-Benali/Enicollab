@@ -22,8 +22,8 @@ public class Matiere {
 	    private Long id;
 
 	    private String nom;
-	    @ManyToMany(mappedBy = "matieres") // Mapping inverse de la relation Many-to-Many définie dans Teacher
-	    private List<Teacher> teachers; // Liste des enseignants qui enseignent cette matière
+	    @ManyToMany(mappedBy = "matieres") 
+	    private List<Teacher> teachers; 
 
 	    // Getters and setters
 	    public List<Teacher> getTeachers() {

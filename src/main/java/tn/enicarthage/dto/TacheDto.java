@@ -2,6 +2,8 @@ package tn.enicarthage.dto;
 
 import java.sql.Date;
 
+import tn.enicarthage.entities.Depot;
+
 public class TacheDto {
 	private Long id;
     private String description;
@@ -9,6 +11,13 @@ public class TacheDto {
     private double note;
     private double coefficient;
     private boolean terminee;
+    private Depot depot;
+	public Depot getDepot() {
+		return depot;
+	}
+	public void setDepot(Depot depot) {
+		this.depot = depot;
+	}
 	public Long getId() {
 		return id;
 	}

@@ -24,7 +24,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	
 	 @Override
 	    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-	        // Essayez de charger l'utilisateur depuis la classe User
+	       
 	        Optional<User> userOptional = userRepository.findFirstByEmail(username);
 	        if (userOptional.isPresent()) {
 	            User user = userOptional.get();
@@ -35,7 +35,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	            );
 	        }
 
-	        // Si l'utilisateur n'est pas trouvé dans la classe User, essayez de le charger depuis la classe Teacher
+	        
 	        Optional<Teacher> teacherOptional = teacherService.findByEmail(username);
 	        if (teacherOptional.isPresent()) {
 	            Teacher teacher = teacherOptional.get();

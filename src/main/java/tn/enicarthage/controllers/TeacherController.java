@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.enicarthage.dto.MatiereDto;
 import tn.enicarthage.dto.ProjetDto;
 import tn.enicarthage.entities.Matiere;
 import tn.enicarthage.entities.Projet;
@@ -67,6 +68,12 @@ public class TeacherController {
     public ResponseEntity<List<ProjetDto>> getAllProjets() {
         List<ProjetDto> projets = teacherService.getAllProjects();
         return ResponseEntity.ok(projets);
+    }
+    
+    @GetMapping("/matieres")
+    public ResponseEntity<List<MatiereDto>> getAllMatieresProf() {
+        List<MatiereDto> matieres = teacherService.getAllMatieres();
+        return ResponseEntity.ok(matieres);
     }
 
 }

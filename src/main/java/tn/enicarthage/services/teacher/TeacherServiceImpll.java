@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import tn.enicarthage.dto.MatiereDto;
 import tn.enicarthage.dto.ProjetDto;
 import tn.enicarthage.entities.Depot;
 import tn.enicarthage.entities.Matiere;
@@ -157,6 +157,14 @@ public class TeacherServiceImpll implements TeacherService{
 	                .map(Projet::getProjetDto)
 	                .collect(Collectors.toList());
 	    }
-	    
+	    @Override
+	    public List<MatiereDto> getAllMatieres(){
+	    	List<Matiere> matieres = matiereRepository.findAll();
+	    	return matieres.stream()
+	    			.map(Matiere::getMatiereDto)
+	                .collect(Collectors.toList());
+	    	
+	    }
+	        
 
 }

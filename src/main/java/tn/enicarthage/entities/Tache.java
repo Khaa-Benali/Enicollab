@@ -93,6 +93,7 @@ public class Tache {
 	 tacheDto.setCoefficient(coefficient);
 	 tacheDto.setId(id);
 	 tacheDto.setDescription(description);
+	 tacheDto.setDepot(depot);
 	 return tacheDto;
  }
 }
