@@ -16,6 +16,9 @@ public class ProjetDto {
 	    private Long matiereId;
 	    private List<TacheDto> taches;
 	    private List<StudentDto> team;
+		public ProjetDto() {
+			
+		}
 		public Long getId() {
 			return id;
 		}

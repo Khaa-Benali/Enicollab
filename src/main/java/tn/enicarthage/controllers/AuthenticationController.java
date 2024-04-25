@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Optional;
 
 import tn.enicarthage.entities.*;
-import tn.enicarthage.enums.UserRole;
 import tn.enicarthage.repositories.TeacherRepository;
 import tn.enicarthage.repositories.UserRepository;
 

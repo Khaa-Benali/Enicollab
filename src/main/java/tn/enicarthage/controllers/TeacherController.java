@@ -64,12 +64,11 @@ public class TeacherController {
         }
     }
     
-    @GetMapping("/projets")
-    public ResponseEntity<List<ProjetDto>> getAllProjets() {
+    @GetMapping("/projects")
+    public ResponseEntity<List<ProjetDto>> getAllProjetsTeacher() {
         List<ProjetDto> projets = teacherService.getAllProjects();
         return ResponseEntity.ok(projets);
     }
-    
     @GetMapping("/matieres")
     public ResponseEntity<List<MatiereDto>> getAllMatieresProf() {
         List<MatiereDto> matieres = teacherService.getAllMatieres();

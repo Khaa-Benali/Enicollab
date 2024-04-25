@@ -146,10 +146,7 @@ public class TeacherServiceImpll implements TeacherService{
 	        }
 	        return noteFinale;
 	    }
-		@Override
-		public List<Projet> getAllProjets() {
-			return projetRepository.findAll();
-		}
+		
 		@Override
 	    public List<ProjetDto> getAllProjects() {
 	        List<Projet> projets = projetRepository.findAll();

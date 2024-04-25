@@ -150,8 +150,6 @@ public class Projet {
 		                    .collect(Collectors.toList());
 		            projetDto.setTaches(tacheDtos);
 		        }
-
-		        // Convertissez la liste des membres de l'équipe en liste de DTOs
 		        if (this.getTeam() != null) {
 		            List<StudentDto> studentDtos = this.getTeam().stream()
 		                    .map(User::getStudentDto)

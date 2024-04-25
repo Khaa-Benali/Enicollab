@@ -31,7 +31,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 	 protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 	            throws ServletException, IOException {
 	        String requestURI = request.getRequestURI();
-	        if (requestURI.startsWith("/api/admin")) {
+	        if (requestURI != null && requestURI.startsWith("/api/admin")) {
 	            filterChain.doFilter(request, response);
 	            return;
 	        }
@@ -51,6 +51,12 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 	            }
 	        }
 	        filterChain.doFilter(request, response);
+	    }
+	
+	
+	 public void processAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+	            throws ServletException, IOException {
+	        doFilterInternal(request, response, filterChain);
 	    }
 
 }

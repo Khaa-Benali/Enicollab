@@ -27,12 +27,9 @@ public interface TeacherService {
 	void noterTache(Long tacheId, double note);
 	double calculNoteFinal(Long id);
 
-	List<Projet> getAllProjets();
-
 	List<ProjetDto> getAllProjects();
 
 	List<MatiereDto> getAllMatieres();
-
 
 
 }

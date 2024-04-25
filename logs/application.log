@@ -1,0 +1,43 @@
+03:39:12.753 [restartedMain] INFO  tn.enicarthage.EnicollabApplication - Starting EnicollabApplication using Java 17.0.10 with PID 18188 (C:\Users\benal\Documents\workspace-spring-tool-suite-4-4.13.0.RELEASE\enicollab\target\classes started by benal in C:\Users\benal\Documents\workspace-spring-tool-suite-4-4.13.0.RELEASE\enicollab)
+03:39:12.753 [restartedMain] INFO  tn.enicarthage.EnicollabApplication - No active profile set, falling back to 1 default profile: "default"
+03:39:12.915 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+03:39:12.954 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 7 JPA repository interfaces.
+03:39:13.085 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8091 (http)
+03:39:13.085 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+03:39:13.085 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+03:39:13.086 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+03:39:13.102 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+03:39:13.102 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 348 ms
+03:39:13.159 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+03:39:13.167 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+03:39:13.181 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a9358a
+03:39:13.181 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+03:39:13.182 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+03:39:13.351 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+03:39:13.352 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03:39:13.757 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03:39:13.935 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4cb16ee6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41f72508, org.springframework.security.web.context.SecurityContextHolderFilter@73eeb76f, org.springframework.security.web.header.HeaderWriterFilter@36bf35a2, org.springframework.security.web.authentication.logout.LogoutFilter@48f22f51, tn.enicarthage.filters.JwtRequestFilter@588c20c9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5d93eecc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5dea42bf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12376e85, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2215e831, org.springframework.security.web.session.SessionManagementFilter@331dfafc, org.springframework.security.web.access.ExceptionTranslationFilter@325b1fc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7de3cc53]
+03:39:14.058 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+03:39:14.070 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+03:39:14.073 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8091 (http) with context path ''
+03:39:14.080 [restartedMain] INFO  tn.enicarthage.EnicollabApplication - Started EnicollabApplication in 1.356 seconds (process running for 781.481)
+03:39:14.082 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+03:39:28.937 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+03:39:28.946 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8091"]
+03:39:28.946 [Thread-15] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+03:39:28.949 [Thread-15] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-4 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.10/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.10/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.10/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.10/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.10/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.10/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.10/java.lang.Thread.run(Thread.java:842)
+03:39:28.949 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8091"]
+03:39:28.950 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8091"]
+03:39:28.951 [Thread-15] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+03:39:28.952 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+03:39:28.957 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+03:39:28.998 [restartedMain] INFO  tn.enicarthage.EnicollabApplication - Starting Enicollab Application...
